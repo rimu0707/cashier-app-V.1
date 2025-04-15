@@ -1,7 +1,7 @@
 Final Version
 What's new :
 1. Database change
-2. Slightly UI improvement
+2. UI improvement
 3. Customer data feature added
 4. Validation in transaction feature
 5. Customer data in transaction feature added
