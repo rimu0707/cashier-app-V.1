@@ -3,7 +3,7 @@ What's new :
 1. Database change
 2. UI improvement
 3. Customer data feature added
-4. Validation in transaction feature
+4. Validation in transaction feature added
 5. Customer data in transaction feature added
 6. Some bug fixes
 
