@@ -1,4 +1,13 @@
-Silahkan gunakan kode ini, tapi gw gak jamin ini bakal jalan di lu
-table database udh di include, tinggal buat database di phpmyadmin, trus import table nya
-kalau ada error, benerin sendiri :)
-argato!
+Final Version
+What's new :
+1. Database change
+2. UI improvement
+3. Customer data feature added
+4. Validation in transaction feature
+5. Customer data in transaction feature added
+6. Some bug fixes
+
+Feel free to use this code :)
+But i'm not guarateed this is gonna work for you
+If you encountered bug or something
+Fix it yourself :p
