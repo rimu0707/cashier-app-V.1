@@ -1,0 +1,40 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+.floating-sidebar {
+    position: fixed;
+    top: 15px; /* biar ada jarak dari atas */
+    left: 1rem;
+    width: 250px;
+    height: 96vh;
+    background-color: #e3f2fd;
+    border-radius: 5px;
+    /* box-shadow: 3px 10px 25px rgba(0, 0, 0, 0.1); */
+    z-index: 1050;
+    overflow-y: auto; /* biar sidebar bisa di-scroll kalau isinya kepanjangan */
+}
+.floating-sidebar .nav-link {
+    border-radius: 10px;
+    transition: background-color 0.2s;
+}
+.floating-sidebar .nav-link:hover {
+    background-color: #f8f9fa;
+}
+  
+.sidebar .nav-link {
+    color: #000;
+}
+.sidebar .nav-link:hover {
+    background-color: #d0e2f2;
+    border-radius: .375rem;
+}
+.content {
+    flex-grow: 1;
+    padding: 1.5rem;
+}
+.sidebar .logo {
+    font-weight: normal;
+    font-size: 1.25rem;
+}

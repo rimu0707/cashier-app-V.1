@@ -1,0 +1,19 @@
+.login-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 15px 20px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+}
+.icon {
+    position: relative;
+    left: 120px;
+    max-width: 100px;
+}
+.form-group {
+    position: relative;
+}
+.form-control {
+    padding-left: 2.75rem;
+}
