@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 15, 2025 at 06:21 PM
+-- Generation Time: Apr 15, 2025 at 07:58 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -35,22 +35,6 @@ CREATE TABLE `detailpenjualan` (
   `Jumlah` int(255) NOT NULL,
   `TotalHarga` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `detailpenjualan`
---
-
-INSERT INTO `detailpenjualan` (`DetailID`, `PenjualanID`, `TanggalPenjualan`, `NamaProduk`, `Jumlah`, `TotalHarga`) VALUES
-(1, 10, '2025-04-15 11:11:58', 'Buku Tulis', 1, 1000.00),
-(2, 11, '2025-04-15 11:12:46', 'Buku Tulis', 1, 1000.00),
-(3, 12, '2025-04-15 11:13:24', 'Buku Tulis', 1, 1000.00),
-(4, 13, '2025-04-15 11:17:18', 'Buku Tulis', 1, 1000.00),
-(5, 21, '2025-04-15 13:25:55', 'Buku Tulis', 2, 2000.00),
-(6, 22, '2025-04-15 13:29:14', 'Buku Tulis', 1, 1000.00),
-(7, 23, '2025-04-15 13:30:58', 'Buku Tulis', 1, 1000.00),
-(8, 24, '2025-04-15 13:42:36', 'Buku Tulis', 1, 1000.00),
-(9, 25, '2025-04-15 13:45:52', 'Buku Tulis', 1, 1000.00),
-(10, 5, '2025-04-15 21:58:39', 'Buku Tulis', 1, 1000.00);
 
 -- --------------------------------------------------------
 
@@ -85,13 +69,6 @@ CREATE TABLE `penjualan` (
   `TanggalPenjualan` datetime NOT NULL,
   `TotalHarga` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `penjualan`
---
-
-INSERT INTO `penjualan` (`PenjualanID`, `PelangganID`, `TanggalPenjualan`, `TotalHarga`) VALUES
-(5, 1, '2025-04-15 21:58:39', 1000.00);
 
 -- --------------------------------------------------------
 
@@ -136,9 +113,9 @@ CREATE TABLE `produk` (
 --
 
 INSERT INTO `produk` (`id`, `ProdukID`, `NamaProduk`, `Harga`, `Stok`) VALUES
-(1, '6942233615870', 'Buku Tulis', 1000.00, 989),
-(2, '8991102026352', 'Crystaline', 2000.00, 9997),
-(3, '8885007024110', 'Tinta Epson Kuning', 5000.00, 997),
+(1, '6942233615870', 'Buku Tulis', 1000.00, 982),
+(2, '8991102026352', 'Crystaline', 2000.00, 9996),
+(3, '8885007024110', 'Tinta Epson Kuning', 5000.00, 993),
 (6, '8885007024103', 'Tinta Epson Biru', 10000.00, 1000);
 
 --
@@ -185,7 +162,7 @@ ALTER TABLE `produk`
 -- AUTO_INCREMENT for table `detailpenjualan`
 --
 ALTER TABLE `detailpenjualan`
-  MODIFY `DetailID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `DetailID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `pelanggan`
@@ -197,7 +174,7 @@ ALTER TABLE `pelanggan`
 -- AUTO_INCREMENT for table `penjualan`
 --
 ALTER TABLE `penjualan`
-  MODIFY `PenjualanID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `PenjualanID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `petugas`
