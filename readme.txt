@@ -1,7 +1,7 @@
 Final Version
 What's new :
 1. Database change
-2. UI improvement
+2. Slightly UI improvement
 3. Customer data feature added
 4. Validation in transaction feature
 5. Customer data in transaction feature added
@@ -9,5 +9,5 @@ What's new :
 
 Feel free to use this code :)
 But i'm not guarateed this is gonna work for you
-If you encountered bug or something
+If you encountered a bug or error
 Fix it yourself :p
