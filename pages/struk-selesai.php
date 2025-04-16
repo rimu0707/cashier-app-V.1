@@ -1,33 +1,32 @@
 <?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location: ../index.php");
+    exit;
+}
+
 include '../config/koneksi.php';
 
-// Pastikan ada parameter 'penjualan_id' di URL
-if (!isset($_GET['PenjualanID'])) {
-    echo "ID transaksi tidak ditemukan.";
-    exit;
+// Cek dan ambil ID dari URL (PenjualanID)
+if (isset($_GET['PenjualanID'])) {
+    $penjualanId = $_GET['PenjualanID'];
+
+    // Ambil data transaksi berdasarkan PenjualanID
+    $queryPenjualan = "SELECT * FROM Penjualan WHERE PenjualanID = '$penjualanId'";
+    $resultPenjualan = mysqli_query($conn, $queryPenjualan);
+
+    if ($resultPenjualan && mysqli_num_rows($resultPenjualan) > 0) {
+        $penjualan = mysqli_fetch_assoc($resultPenjualan);
+    } else {
+        die("Data penjualan tidak ditemukan.");
+    }
+
+    $tanggalPenjualan = $penjualan['TanggalPenjualan'];
+    $totalHarga = $penjualan['TotalHarga'];
+    $pelangganId = $penjualan['PelangganID'];
+} else {
+    die("PenjualanID tidak ditemukan.");
 }
-
-$penjualanId = $_GET['PenjualanID'];
-
-// Ambil nama pelanggan dari tabel DetailPenjualan (anggap nama pelanggan ada di sini)
-$queryPelanggan = "
-    SELECT DISTINCT dp.NamaPelanggan, p.TotalHarga, p.TanggalPenjualan 
-    FROM DetailPenjualan dp
-    JOIN Penjualan p ON dp.PenjualanID = p.PenjualanID
-    WHERE dp.PenjualanID = '$penjualanId'
-";
-$resultPelanggan = mysqli_query($conn, $queryPelanggan);
-$penjualanData = mysqli_fetch_assoc($resultPelanggan);
-
-// Jika data penjualan tidak ditemukan
-if (!$penjualanData) {
-    echo "Transaksi tidak ditemukan.";
-    exit;
-}
-
-$namaPelanggan = $penjualanData['NamaPelanggan'];
-$totalHarga = $penjualanData['TotalHarga'];
-$tanggalTransaksi = $penjualanData['TanggalPenjualan'];
 
 // Ambil detail transaksi dengan harga produk dari tabel Produk
 $queryDetail = "
@@ -55,8 +54,11 @@ $resultDetail = mysqli_query($conn, $queryDetail);
             <p>Jl. Kalimalang Pinggir Kali</p>
             <p>Bekasi, Jawa Barat</p>
             <hr>
-            <p><?php echo date('d-m-Y H:i', strtotime($tanggalTransaksi)); ?></p>
-            <p>Nama Pelanggan: <?php echo htmlspecialchars($namaPelanggan); ?></p> <!-- Menampilkan nama pelanggan -->
+            <p><?php date_default_timezone_set('Asia/Jakarta'); echo date('d-m-Y H:i'); ?></p>
+            <p>Kasir: <?php echo $_SESSION['username']; ?></p>
+            <?php if ($pelangganId): ?>
+                <p>ID Pelanggan: <?php echo $pelangganId; ?></p>
+            <?php endif; ?>
         </div>
         <table>
             <tr>
@@ -84,5 +86,9 @@ $resultDetail = mysqli_query($conn, $queryDetail);
             SMS/CALL: 0866-6666-6666
         </p>
     </div>
+
+    <script>
+        window.print();
+    </script>
 </body>
 </html>
