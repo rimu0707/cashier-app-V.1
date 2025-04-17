@@ -11,7 +11,7 @@ What's Missing/Not So Great Stuff :
 1. Some UI elements are still inconsistent on different screen resolutions
 2. UI still looks kinda plain, though I think it’s an improvement from before (maybe?)
 3. Minor bug: if you add items before entering customer data and processing the payment (with the correct payment amount, of course), an error warning will pop up when you click "Pay" — just hit OK and re-enter the payment amount, and you're good to go
-4. Profile is still very basic — no profile picture support, and updating user data still has to go through the admin
+4. User profile is still very basic — no profile picture support, and updating user data still has to go through the admin
 
 Feel free to use this code :)
 But i'm not guarateed this is gonna work for you,
