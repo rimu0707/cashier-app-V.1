@@ -1,4 +1,4 @@
-Final Version
+Version : V.1
 What's new :
 1. Database change
 2. UI improvement (imo)
