@@ -1,4 +1,3 @@
-Version : V.1
 
 What's new :
 1. Database change
